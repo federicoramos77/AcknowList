@@ -29,7 +29,8 @@ public struct AcknowSwiftUIView: View {
 
     /// The represented acknowledgement.
     @State public var acknowledgement: Acknow
-
+    public var backgroundColor: Color?
+    
     public var body: some View {
         #if os(macOS)
         ScrollView {
@@ -49,6 +50,7 @@ public struct AcknowSwiftUIView: View {
                 .font(.body)
                 .padding()
         }
+        .background(backgroundColor)
         .navigationBarTitle(acknowledgement.title)
         .onAppear {
             fetchLicenseIfNecessary()
