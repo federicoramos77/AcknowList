@@ -44,7 +44,7 @@ public struct AcknowListSwiftUIView: View {
     
     public var backgroundColor: Color?
     
-    public init() {
+    public init(backgroundColor: Color? = nil) {
         if let acknowList = AcknowParser.defaultAcknowList() {
             self.init(acknowList: acknowList)
         }
@@ -55,6 +55,7 @@ public struct AcknowListSwiftUIView: View {
                 "Please take a look at https://github.com/vtourraine/AcknowList for instructions.", terminator: "\n")
             self.init(acknowledgements: [])
         }
+        self.backgroundColor = backgroundColor
     }
     
     public init(acknowList: AcknowList) {
