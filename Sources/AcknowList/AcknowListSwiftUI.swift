@@ -106,14 +106,18 @@ public struct AcknowListSwiftUIView: View {
             Section(header: HeaderFooter(text: headerText), footer: HeaderFooter(text: footerText)) {
                 ForEach(acknowledgements) { acknowledgement in
                     AcknowListRowSwiftUIView(acknowledgement: acknowledgement, backgroundColor: backgroundColor)
+                        .padding(.vertical, 8)
                 }
             }
-            .listStyle(GroupedListStyle())
-            .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-            .scrollContentBackground(.hidden)
-            .scrollIndicators(.hidden)
             .listRowBackground(backgroundColor)
         }
+        .font(.system(size: 17))
+        .listStyle(GroupedListStyle())
+        .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+        .scrollContentBackground(.hidden)
+        .scrollIndicators(.hidden)
+        .background(backgroundColor)
+        .navigationTitle("Open Source Licenses")
     }
     
     public var body: some View {
